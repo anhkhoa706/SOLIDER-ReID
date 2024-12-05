@@ -19,8 +19,8 @@ INPUT:
   PIXEL_STD: [0.5, 0.5, 0.5]
 
 DATASETS:
-  NAMES: ('msmt17')
-  ROOT_DIR: ('path/to/msmt17/datasets')
+  NAMES: ('market1501')
+  ROOT_DIR: ('datasets')
 
 DATALOADER:
   SAMPLER: 'softmax_triplet'
