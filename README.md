@@ -57,3 +57,14 @@ If you find this code useful for your research, please cite our paper
   year={2023},
 }
 ```
+ReRanking Paper & Source Code
+[ReRanking](https://github.com/zhunzhong07/person-re-ranking)
+
+```
+ @article{zhong2017re,
+  title={Re-ranking Person Re-identification with k-reciprocal Encoding},
+  author={Zhong, Zhun and Zheng, Liang and Cao, Donglin and Li, Shaozi},
+  booktitle={CVPR},
+  year={2017}
+}
+```
