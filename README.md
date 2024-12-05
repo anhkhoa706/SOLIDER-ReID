@@ -57,7 +57,7 @@ If you find this code useful for your research, please cite our paper
   year={2023},
 }
 ```
-ReRanking Paper & Source Code
+ReRanking paper & their source code
 [ReRanking](https://github.com/zhunzhong07/person-re-ranking)
 
 ```
