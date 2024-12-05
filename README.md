@@ -45,6 +45,10 @@ sh runtest.sh
 - We use the pretrained models from [SOLIDER](https://github.com/tinyvision/SOLIDER).
 - The semantic weight is set to 0.2 in these experiments.
 
+## Streamlit UI
+
+![StreamlitUI for person search task](https://github.com/user-attachments/assets/46e1bb15-5333-4f55-8fe8-b386cfd85a5a) 
+- Person Search in the Market1501 dataset query folder
 ## Citation
 
 If you find this code useful for your research, please cite our paper
