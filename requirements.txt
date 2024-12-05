@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+opencv-python
+scikit-learn
+mmcv
+yacs
+timm
+streamlit
