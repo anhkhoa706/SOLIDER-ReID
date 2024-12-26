@@ -5,22 +5,26 @@ from ReIDSearcher import ReIDSearcher
 st.set_page_config(page_title="Person Search Using Re-ID Model", page_icon="🔍", layout="centered")
 
 # Title and Description
-st.title("🔍 Person Search Using Re-ID Model")
-st.markdown("""This app enables you to find a person in a gallery dataset using a Re-ID model. 
-Simply upload the query image and specify the gallery folder.""")
+# Title and Subtitle
+st.markdown(
+    """
+    <h1 style="text-align: center; font-size: 2.5em; color: #2c3e50;">🔍 Person Search Using Re-ID Model</h1>
+    <p style="text-align: center; font-size: 1.2em; color: #7f8c8d;">Upload a query image and specify the gallery path to find matching results.</p>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Upload Section
 st.subheader("Upload Query Image and Enter Gallery Path")
-col1, col2 = st.columns([2, 3])
+col1, col2 = st.columns([4, 4])
 
 with col1:
-    query_image = st.file_uploader("Upload a Query Image", type=["jpg", "jpeg", "png"])
-    gallery_path = st.text_input("Gallery Folder Path:", placeholder="e.g., /path/to/gallery/")
+    query_image = st.file_uploader("#### 1️⃣ Upload a Query Image", type=["jpg", "jpeg", "png"])
+    gallery_path = st.text_input("#### 2️⃣ Enter Gallery Path", placeholder="e.g., /path/to/gallery/")
 
 with col2:
     if query_image:
-        st.image(query_image, caption="Query Image", width=150)
-
+        st.image(query_image, caption="", width=160)
 # Process Button and Results
 if st.button("🔍 Start Search"):
     if not query_image or not gallery_path:
@@ -41,8 +45,16 @@ if st.button("🔍 Start Search"):
         top_matches = top_matches[1:]
         for idx, (img, score) in enumerate(top_matches):
             img_path = gallery_path + '/' + img
+            # Processing img_name
+            img_name = img
+            re_txt = [".jpg", "_te", "_t", "_val",]
+            for txt in re_txt:
+                img_name = str(img_name).replace(txt,"")
             with cols[idx % 4]:  # Cycle through columns
-                st.image(img_path, caption=f"Rank {idx + 1}\nScore: {score:.4f}", width=120)
+                st.image(img_path, width=140)
+                st.write(f"**Rank {idx + 1}**")
+                st.write(f"Distance {score:.3f}")
+                st.write(f"{img_name}")
 
 # Style Enhancements
 st.markdown("""
