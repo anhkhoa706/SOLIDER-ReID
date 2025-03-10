@@ -31,7 +31,6 @@ class ReIDSearcher:
             cfg.merge_from_file(self.config_file)
         cfg.TEST.WEIGHT = self.weight_path
         cfg.TEST.RE_RANKING = self.re_ranking
-        cfg.freeze()
 
         output_dir = cfg.OUTPUT_DIR
         if output_dir and not os.path.exists(output_dir):
